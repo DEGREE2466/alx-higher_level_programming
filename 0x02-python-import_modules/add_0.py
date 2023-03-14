@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 def add(a, b):
     """My addition function
     Args:
