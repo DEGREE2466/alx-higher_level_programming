@@ -15,23 +15,6 @@ class Rectangle:
         self.width = width
 
     @property
-    def width(self):
-        """Get/set the width of the rectangle."""
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        """
-            Checking for TypeError and ValueError
-            then setting up the private var
-        """
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = value
-        
-    @property
     def height(self):
         """Get/set the height of the rectangle."""
         return self.__height
@@ -48,14 +31,22 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-    def perimeter(self):
-        """
-            Calculates the perimeter of a rectangle
-        """
-        if self.height == 0 or self.width == 0:
-            return 0
+    @property
+    def width(self):
+        """Get/set the width of the rectangle."""
+        return self.__width
 
-        return 2 * (self.height + self.width)
+    @width.setter
+    def width(self, value):
+        """
+            Checking for TypeError and ValueError
+            then setting up the private var
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
     def area(self):
         """
@@ -63,7 +54,16 @@ class Rectangle:
         """
         return self.height * self.width
 
-     def __str__(self):
+    def perimeter(self):
+        """
+            Calculates the perimeter of a rectangle
+        """
+        if self.height == 0 or self.width == 0:
+            return 0
+
+        return (self.height + self.width) * 2
+
+    def __str__(self):
         '''
             returning the string representation of the rectangle
         '''
