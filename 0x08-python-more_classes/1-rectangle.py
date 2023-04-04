@@ -2,14 +2,13 @@
 """Define a rectangle"""
 
 class Rectangle:
-    """Reprensents a rectangle"""
+    """Represents rectangle"""
 
     def __init__(self, width=0, height=0):
-        """
-        Initialize a new Rectangle.
+        """Initialize a new Rectangle.
         Args:
-        width (int): The width of the new rectangle
-        height (int): The height of the new rectangle
+            width (int): The width of the new rectangle
+            height (int): The height of the new rectangle
         """
         self.width = width
         self.height = height
@@ -39,8 +38,8 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """
-        Checking for TypeError and ValueError
-        then setting up the private var
+            Checking for TypeError and ValueError
+            then setting up the private var
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
