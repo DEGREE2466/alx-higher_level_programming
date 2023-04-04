@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Defines the class of a rectangle"""
+"""Define a rectangle"""
 
 
 class Rectangle:
-    """Represents a rectangle"""
+    """Represents rectangle"""
 
     number_of_instances = 0
     print_symbol = "#"
@@ -16,28 +16,11 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
-
-    @property
-    def height(self):
-        """Gets and set the height of the rectangle."""
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        '''
-            Checking for TypeError and ValueError
-            then setting up the private variable
-        '''
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be >= 0")
-        self.__height = value
+        Rectangle.number_of_instances += 1    
 
     @property
     def width(self):
-        """Gets and sets the width of the rectangle."""
+        """Get/set the width of the rectangle."""
         return self.__width
 
     @width.setter
@@ -51,6 +34,23 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
+
+    @property
+    def height(self):
+        """Get/set the height of the rectangle."""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """
+            Checking for TypeError and ValueError
+            then setting up the private var
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
     def area(self):
         """
@@ -71,12 +71,12 @@ class Rectangle:
         '''
             returning the string representation of the rectangle
         '''
-        symb = str(self.print_symbol)
+        symbol = str(self.print_symbol)
         rectangle = ""
         if self.height == 0 or self.width == 0:
             return rectangle
 
-        for i in range(self.height - 1):
+        for h in range(self.height - 1):
             rectangle += symbol * self.width + "\n"
         rectangle += symbol * self.width
         return rectangle
@@ -91,7 +91,7 @@ class Rectangle:
 
     def __del__(self):
         '''
-            printing a message when instance is deleted
+            printing a message with instance is deleted
         '''
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
