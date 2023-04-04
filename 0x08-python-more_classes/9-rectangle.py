@@ -19,22 +19,6 @@ class Rectangle:
         Rectangle.number_of_instances += 1
 
     @property
-    def width(self):
-        """Get/set the width of the rectangle."""
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        """
-            Checking for TypeError and ValueError
-            then setting up the private var
-        """
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = value
-@property
     def height(self):
         """Get/set the height of the rectangle."""
         return self.__height
@@ -50,6 +34,23 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    @property
+    def width(self):
+        """Get/set the width of the rectangle."""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """
+            Checking for TypeError and ValueError
+            then setting up the private var
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
     def area(self):
         """
@@ -81,15 +82,17 @@ class Rectangle:
         return rectangle
 
     def __repr__(self):
-        """creating a recreation of the instance call"""
-        
+        '''
+            creating a recreation of the instance call
+        '''
         rep = "{}({}, {})".format(self.__class__.__name__,
                                   self.width, self.height)
         return rep
 
     def __del__(self):
-        """printing a message with instance is deleted"""
-        
+        '''
+            printing a message with instance is deleted
+        '''
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
