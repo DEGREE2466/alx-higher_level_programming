@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Function that adds all arguments to a Python list and saves them to a JSON file.
+Adds all arguments to a Python list and saves them to a file.
 """
 
 
@@ -12,10 +12,10 @@ load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
 def add_item(args: List[str], filename: str) -> None:
     """
-    Adds all arguments to a Python list and saves them to a given file.
+    Adds all arguments to a Python list and saves them to a file.
     Args:
-        args (List[str]): The arguments to add to the Python list.
-        filename (str): The name of the file to be saved to the list.
+        args (List[str]): The arguments to add to the list.
+        filename (str): The name of the file to save the list to.
     """
     try:
         my_list = load_from_json_file(filename)
