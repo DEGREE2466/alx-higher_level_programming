@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 """
-Contains a function that returns the dictionary description with the
-simple data structures (list, dictionary, string, integer and boolean) for a JSON
+This module contains a function that returns the dictionary description with
+simple data structure (list, dictionary, string, integer and boolean) for JSON
 serialization of an object.
 """
 
 
 def class_to_json(obj):
     """
-    A string that returns a dictionary description with simple data structure for JSON
+    Returns a dictionary description with simple data structure for JSON
     serialization of an object.
     Args:
-        obj: The object to serialize.
+        obj: The object to be serialized.
     Returns:
-        A dictionary with a simple data structure for JSON serialization.
+        A dictionary with simple data structure for JSON serialization.
     """
     return obj.__dict__
