@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""Defines a Student module"""
+"""Student module"""
 
 
 class Student:
-    """A Student class"""
+    """Student class"""
 
     def __init__(self, first_name, last_name, age):
-        """Initializes Student class instance with their
-        first name, last name, and age attributes"""
+        """Initializes Student class instance with
+        first name, last name, and age"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
@@ -22,8 +22,7 @@ class Student:
                 in attrs if hasattr(self, attr)}
 
     def reload_from_json(self, json):
-        """Replaces all attributes of the instance Student"""
+        """Replaces all attributes of the Student instance"""
         for key, value in json.items():
             if hasattr(self, key):
                 setattr(self, key, value)
-
